@@ -13,7 +13,7 @@ namespace XFormsCatatanKita
 		{
 			InitializeComponent();
 
-			MainPage = new XFormsCatatanKita.MainPage();
+			MainPage = new NavigationPage(new CatatansPage());
 		}
 
 		protected override void OnStart ()

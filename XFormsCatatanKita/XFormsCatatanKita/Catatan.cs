@@ -39,6 +39,7 @@ namespace XFormsCatatanKita
                 OnPropertyChanged(nameof(Name));
             }
         }
+
         private string _title;
         [NotNull]
         public string Title

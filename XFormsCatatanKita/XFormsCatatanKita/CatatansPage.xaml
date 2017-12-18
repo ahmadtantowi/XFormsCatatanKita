@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFormsCatatanKita.CatatansPage"
+             Title="Catatan Kita">
+    <ContentPage.Content>
+        <ListView x:Name="CatatansView"
+            ItemsSource="{Binding Path=Catatans}"
+            ListView.RowHeight="240"
+            Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <!--<Entry Text="{Binding Id}" IsEnabled="False" />-->
+                            <!--<StackLayout Orientation="Horizontal">-->
+                                <Label Text="Pemilik: " />
+                                <Entry Text="{Binding Name}" Placeholder="Nama pemilik catatan" />
+                            <!--</StackLayout>
+                            <StackLayout Orientation="Horizontal">-->
+                                <Label Text="Judul: " />
+                                <Entry Text="{Binding Title}" Placeholder="Judul catatan" />
+                            <!--</StackLayout>-->
+                            <Label Text="Isi:" />
+                            <Editor Text="{Binding Content}" MinimumHeightRequest="50" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Tambah" Activated="OnAddClick" 
+               Priority="0" Order="Primary" />
+        <ToolbarItem Name="Simpan" Activated="OnSaveClick"
+               Priority="1" Order="Primary" />
+        <ToolbarItem Name="Remove" Activated="OnRemoveClick"
+               Priority="2" Order="Secondary" />
+        <ToolbarItem Name="Remove all" Activated="OnRemoveAllClick"
+               Priority="3" Order="Secondary" />
+    </ContentPage.ToolbarItems>
+</ContentPage>
